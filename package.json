@@ -1,0 +1,23 @@
+{
+  "author": "Luciano Ropero <lropero@gmail.com>",
+  "dependencies": {
+    "http-server": "0.8.5"
+  },
+  "description": "The NowPlaying page is a simple one-page app where visitors can visualize the most recent videos being shared on Twitter by people nearby.",
+  "devDependencies": {
+    "del": "2.1.0",
+    "gulp": "3.9.0",
+    "gulp-concat": "2.6.0",
+    "gulp-concat-css": "2.2.0",
+    "gulp-minify-css": "1.2.1",
+    "gulp-sass": "2.1.0",
+    "gulp-uglify": "1.5.1"
+  },
+  "license": "ISC",
+  "name": "nowplaying",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/.bin/hs.cmd -p 8000"
+  },
+  "version": "1.0.0"
+}

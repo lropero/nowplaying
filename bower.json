@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "Luciano Ropero <lropero@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-route": "1.4.7",
+    "bootstrap": "3.3.5",
+    "html5-boilerplate": "5.2.0",
+    "jquery": "2.1.4",
+    "modernizr": "2.8.3",
+    "normalize.css": "3.0.3",
+    "oauthio-web": "0.4.4"
+  },
+  "description": "The NowPlaying page is a simple one-page app where visitors can visualize the most recent videos being shared on Twitter by people nearby.",
+  "license": "ISC",
+  "name": "nowplaying",
+  "private": true
+}
