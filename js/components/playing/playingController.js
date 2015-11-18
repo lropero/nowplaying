@@ -12,6 +12,9 @@
 			return;
 		}
 
+		twitterService.initialize();
+		var connection = twitterService.connect();
+
 		var getTweets = function() {
 			if($scope.latitude && $scope.longitude) {
 				connection.then(function() {
@@ -45,9 +48,6 @@
 				}
 			}
 		};
-
-		twitterService.initialize();
-		var connection = twitterService.connect();
 
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {

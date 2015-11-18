@@ -6,15 +6,15 @@
 		this.getCity = function(latitude, longitude) {
 
 			var deferred = $q.defer();
+
 			$http.get('http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude).then(function(response) {
-
 				var city = false;
-
 				if(response.data.results[1].formatted_address) {
 					city = response.data.results[1].formatted_address;
 				}
-
 				deferred.resolve(city);
+			}, function(reason) {
+				deferred.reject(reason);
 			});
 
 			return deferred.promise;
