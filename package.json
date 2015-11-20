@@ -17,7 +17,7 @@
   "name": "nowplaying",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/hs.cmd -p 8000"
+    "start": "node_modules/.bin/hs.cmd -c-1 -p8000"
   },
   "version": "1.0.0"
 }
