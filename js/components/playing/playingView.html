@@ -1,21 +1,21 @@
 <div class="playing">
 	<div class="container">
-		<h1>#nowplaying <span ng-show="city">in {{city}}</span><span ng-hide="city">everywhere</span></h1>
-		<p>This page shows #nowplaying tweets <span ng-show="city">in {{city}}</span><span ng-hide="city">everywhere</span> that contain a youtube link. It also allows you to post a #nowplaying tweet with a YouTube link.</p>
+		<h1>#nowplaying <span ng-show="city">in {{ city }}</span><span ng-hide="city">everywhere</span></h1>
+		<p>This page shows #nowplaying tweets <span ng-show="city">in {{ city }}</span><span ng-hide="city">everywhere</span> that contain a youtube link. It also allows you to post a #nowplaying tweet with a YouTube link.</p>
 		<errors errors="errors"></errors>
 		<div ng-hide="tweets.length">
 			<h3>No results</h3>
 		</div>
 		<div class="tweet" ng-repeat="tweet in tweets">
 			<div class="col-sm-6">
-				<a href="{{tweet.video}}" target="_blank">{{tweet.video}}</a>
+				<a href="{{ tweet.video }}" target="_blank">{{ tweet.video }}</a>
 			</div>
 			<div class="col-sm-6">
 				<div class="tweet__user">
-					{{tweet.user}}
+					{{ tweet.user }}
 				</div>
 				<div class="tweet__text">
-					{{tweet.text}}
+					{{ tweet.text }}
 				</div>
 			</div>
 		</div>

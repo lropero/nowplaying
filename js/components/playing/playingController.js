@@ -13,19 +13,25 @@
 		}
 
 		twitterService.initialize();
-		var connection = twitterService.connect();
+		var connection = twitterService.connect().then(function() {}, function(reason) {
+			$scope.errors.push(reason);
+		});
 
 		var getTweets = function() {
 			if($scope.latitude && $scope.longitude) {
 				connection.then(function() {
 					twitterService.getTweets($scope.latitude, $scope.longitude).then(function(response) {
 						process(response);
+					}, function(reason) {
+						$scope.errors.push(reason);
 					});
 				});
 			} else {
 				connection.then(function() {
 					twitterService.getTweets().then(function(response) {
 						process(response);
+					}, function(reason) {
+						$scope.errors.push(reason);
 					});
 				});
 			}

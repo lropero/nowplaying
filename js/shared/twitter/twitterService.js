@@ -18,7 +18,6 @@
 					self.authorization = result;
 					deferred.resolve();
 				} else {
-					console.log(err);
 					deferred.reject(err);
 				}
 			});
@@ -30,15 +29,19 @@
 
 			var deferred = $q.defer();
 
-			var url = '/1.1/search/tweets.json?q=%23nowplaying';
-			if(typeof latitude !== 'undefined' && typeof longitude !== 'undefined') {
-				url += '&geocode=' + latitude + ',' + longitude + ',50mi';
+			if(!this.authorization) {
+				deferred.reject('No authorization.');
+			} else {
+				var url = '/1.1/search/tweets.json?q=%23nowplaying';
+				if(typeof latitude !== 'undefined' && typeof longitude !== 'undefined') {
+					url += '&geocode=' + latitude + ',' + longitude + ',50mi';
+				}
+				this.authorization.get(url).done(function(result) {
+					deferred.resolve(result);
+				}).fail(function(err) {
+					deferred.reject(err);
+				});
 			}
-			this.authorization.get(url).done(function(result) {
-				deferred.resolve(result);
-			}).fail(function(err) {
-				deferred.reject(err);
-			});
 
 			return deferred.promise;
 		},
