@@ -32,7 +32,7 @@
 			if(!this.authorization) {
 				deferred.reject('No authorization.');
 			} else {
-				var url = '/1.1/search/tweets.json?q=%23nowplaying';
+				var url = '/1.1/search/tweets.json?q=%23nowplaying&count=100';
 				if(typeof latitude !== 'undefined' && typeof longitude !== 'undefined') {
 					url += '&geocode=' + latitude + ',' + longitude + ',50mi';
 				}
