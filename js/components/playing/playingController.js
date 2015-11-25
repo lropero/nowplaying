@@ -38,6 +38,9 @@
 		};
 
 		var process = function(response) {
+
+			$scope.errors.push('Twitter results: ' + response.statuses.length);
+
 			for(var key in response.statuses) {
 
 				var status = response.statuses[key];
@@ -53,6 +56,8 @@
 					}
 				}
 			}
+
+			$scope.errors.push('Tweets with links to YouTube: ' + $scope.tweets.length);
 		};
 
 		if(navigator.geolocation) {
